@@ -3,4 +3,4 @@
 (println (* 299 299))
 (println (/ 50 5))
 
-(println (+ 2 2 2 2 2 ))
+(println (+ 2 2 2 2 2))
