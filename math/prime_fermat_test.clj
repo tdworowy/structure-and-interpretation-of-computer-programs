@@ -18,9 +18,9 @@
     (fermat-test n) (fast-prime? n (- times 1))
     :else false))
 
-(println (fast-prime? 97 2))
-(println (fast-prime? 97 5))
+;; (println (fast-prime? 97 2))
+;; (println (fast-prime? 97 5))
 
-(println (fast-prime? 224 2))
-(println (fast-prime? 782438202 2))
-(println (fast-prime? 782438202 5))
+;; (println (fast-prime? 224 2))
+;; (println (fast-prime? 782438202 2))
+;; (println (fast-prime? 782438202 5))
