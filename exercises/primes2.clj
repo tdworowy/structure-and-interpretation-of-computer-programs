@@ -22,6 +22,7 @@
     (time-prime-test start)
     (search-for-prime (+ start 1) end)))
 
+(search-for-prime 2000, 3000)
 (search-for-prime 1000, 1100)
 (search-for-prime 10000, 10100)
 (search-for-prime 1000000, 1000100)
