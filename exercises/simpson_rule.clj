@@ -12,8 +12,7 @@
   (iter a 0))      ;tail recursion
 
 (defn integral [f a b dx]
-  (defn add-dx [x] (+ x dx))
-  (* (sum f (+ a (/ dx 2.0)) add-dx b) dx))
+  (* (sum f (+ a (/ dx 2.0)) (fn [x] (+ x dx)) b) dx))
 
 ;h/3(y0+4y1+2y2+4y3+2y4+⋯+2yn−2+4yn−1+yn)
 ;h=(b−a)/n
