@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/structure-and-interpretation-of-computer-programs.iml" filepath="$PROJECT_DIR$/.idea/structure-and-interpretation-of-computer-programs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/structure-and-interpretation-of-computer-programs.iml" filepath="$PROJECT_DIR$/structure-and-interpretation-of-computer-programs.iml" />
     </modules>
   </component>
 </project>
