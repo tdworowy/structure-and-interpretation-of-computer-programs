@@ -20,7 +20,9 @@
 (defn prime? [n]
   (= n (smallest-divisor n)))
 
-;; (println (prime? 2))
-;; (println (prime? 4))
-;; (println (prime? 97))
-;; (println (prime? 100000081))
+(defn -main []
+  (println (prime? 2))
+  (println (prime? 4))
+  (println (prime? 97))
+  (println (prime? 100000081))
+  )

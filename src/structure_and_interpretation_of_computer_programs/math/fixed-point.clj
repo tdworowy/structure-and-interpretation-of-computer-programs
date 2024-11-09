@@ -23,6 +23,9 @@
 ;        (try-fn next))))
 ;  (try-fn first-guess))
 
+(defn fixed-point-of-transform [g transform guess]
+  (fixed-point (transform g) guess))
+
 (defn average [numbers] (/ (apply + numbers) (count numbers)))
 (defn sqrt [x]
   (fixed-point  (fn [y] (average  [y (/ x y)]))   1.0))
@@ -55,22 +58,28 @@
 (defn sqrt3 [x]
   (newton-method (fn [y] (- (* y y) x)) 1.0))
 
-(println (fixed-point math/cos 1.0))
-(println (fixed-point (fn [y] (+ (math/sin y) (math/cos y))) 1.0))
-(println "_______")
+(defn sqrt4 [x]
+  (fixed-point-of-transform (fn [y] (/ x y)), average-damp 1.0))
 
-(println (sqrt 2))
-(println (sqrt2 2))
-(println (sqrt3 2))
-(println "_______")
+(defn -main []
+  (println (fixed-point math/cos 1.0))
+  (println (fixed-point (fn [y] (+ (math/sin y) (math/cos y))) 1.0))
+  (println "_______")
 
-(println (golden-ratio))
-(println "_______")
+  (println (sqrt 2))
+  (println (sqrt2 2))
+  (println (sqrt3 2))
+  (println (sqrt4 2))
+  (println "_______")
 
-(println (fixed-point (fn [x] (/ (math/log 1000) (math/log x))) 2))
-(println (fixed-point (fn [x] (average [x (/ (math/log 1000) (math/log x))])) 2))
-(println "_______")
+  (println (golden-ratio))
+  (println "_______")
 
-(println (cube-root 9))
-(println ((deriv cube) 5))
-(println "_______")
+  (println (fixed-point (fn [x] (/ (math/log 1000) (math/log x))) 2))
+  (println (fixed-point (fn [x] (average [x (/ (math/log 1000) (math/log x))])) 2))
+  (println "_______")
+
+  (println (cube-root 9))
+  (println ((deriv cube) 5))
+  (println "_______")
+  )
