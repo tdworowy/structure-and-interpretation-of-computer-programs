@@ -24,5 +24,4 @@
   (println (prime? 2))
   (println (prime? 4))
   (println (prime? 97))
-  (println (prime? 100000081))
-  )
+  (println (prime? 100000081)))

@@ -10,7 +10,6 @@
   (letfn [(iter-fn [i result]
             (if (= 0 i) result
                 (iter-fn (- i 1) (/ (n i) (+ result (d i))))))]
-
     (iter-fn (- k 1) (/ (n k) (d k)))))
 
 (println (cont-frac-recur (fn [i] 1.0)

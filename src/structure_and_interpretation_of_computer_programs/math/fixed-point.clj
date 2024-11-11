@@ -81,5 +81,4 @@
 
   (println (cube-root 9))
   (println ((deriv cube) 5))
-  (println "_______")
-  )
+  (println "_______"))
