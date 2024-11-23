@@ -1,4 +1,4 @@
-(load-file "../math/fixed-point.clj")
+(load-file "../math/fixed_point.clj")
 
 (defn compose [f g]
   (fn [x] (f (g x))))
