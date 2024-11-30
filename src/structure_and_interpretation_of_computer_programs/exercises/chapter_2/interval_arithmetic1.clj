@@ -1,6 +1,6 @@
 (defn make-interval [a b]
   (if
-   (> a b) (list a b)
+   (< a b) (list a b)
    (list b a)))
 
 (defn lower-bound [x] (first x))
