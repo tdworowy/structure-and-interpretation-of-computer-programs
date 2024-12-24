@@ -16,6 +16,14 @@
                   (conj rest-reversed first-item)))))]
     (iter-reverse items)))
 
+(defn reverse-vector2 [items]
+  (letfn [(reverse-vector-iter [vec new-vec n]
+            (if (neg? n)
+              new-vec
+              (recur vec (conj new-vec (nth vec n)) (dec n))))]
+    (reverse-vector-iter items [] (dec (count items)))))
+
 (println (reverse-vector [1 2 3 4]))
+(println (reverse-vector2 [1 2 3 4]))
 (println (deep-reverse-vector [1 2 3 4]))
 (println (deep-reverse-vector [1 [2 3] 4]))
