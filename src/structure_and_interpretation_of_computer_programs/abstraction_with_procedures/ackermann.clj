@@ -34,3 +34,7 @@
 (println (A0 0 4))
 (println (A0 1 4))
 (println (A0 2 4))
+;(println (A0 3 4))
+
+(println (A 4 1))
+(println (A 4 2))
