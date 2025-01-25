@@ -27,8 +27,6 @@
 (println (make-pair-sum [2 2]))
 (println (prime-sum-pairs 6))
 
-(defn my-remove [item s])
-
 (defn permutations1 [s]
   (if (empty? s)
     '(())
