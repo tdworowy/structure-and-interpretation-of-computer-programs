@@ -5,8 +5,8 @@
       (fn [j]
         (map
          (fn [m] (list i j m))
-         (range j (inc n))))
-      (range i (inc n))))
+         (range (inc j) (inc n))))
+      (range (inc i) (inc n))))
    (range 1 n)))
 
 (println (unique-triples 5))
