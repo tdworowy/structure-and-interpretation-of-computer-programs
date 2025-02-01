@@ -16,12 +16,16 @@
 (defn make-pair-sum [pair]
   (list (first pair) (first (rest pair)) (+ (first pair) (first (rest pair)))))
 
+(defn unique-pairs [n]
+  (flatmap
+   (fn [i] (map (fn [j] (list i j))
+                (enumerate-interval 1 (- i 1))))
+   (enumerate-interval 1 n)))
+
+(println (unique-pairs 5))
+
 (defn prime-sum-pairs [n]
-  (map make-pair-sum (filter prime-sum?
-                             (flatmap
-                              (fn [i] (map (fn [j] (list i j))
-                                           (enumerate-interval 1 (- i 1))))
-                              (enumerate-interval 1 n)))))
+  (map make-pair-sum (filter prime-sum? (unique-pairs n))))
 
 (println (prime-sum? [2 2]))
 (println (make-pair-sum [2 2]))
@@ -45,3 +49,4 @@
 
 (println (permutations1 [1 2 3]))
 (println (permutations2 [1 2 3]))
+
