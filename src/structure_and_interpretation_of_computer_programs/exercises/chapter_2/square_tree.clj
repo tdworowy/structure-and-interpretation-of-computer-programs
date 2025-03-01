@@ -1,3 +1,5 @@
+(ns structure-and-interpretation-of-computer-programs.exercises.chapter-2.square-tree)
+
 (defn square [x]
   (* x x))
 

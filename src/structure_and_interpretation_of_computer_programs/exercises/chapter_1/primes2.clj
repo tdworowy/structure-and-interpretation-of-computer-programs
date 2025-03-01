@@ -1,8 +1,5 @@
-(load-file "../math/prime_fermat_test.clj")
-;; (defn prime? [n]
-;;   (if (<= n 1)
-;;     false
-;;     (not-any? #(zero? (mod n %)) (range 2 (inc (Math/sqrt n))))))
+(ns structure-and-interpretation-of-computer-programs.exercises.chapter-1.primes2
+  (:require [structure-and-interpretation-of-computer-programs.abstraction-with-procedures.prime-fermat-test :refer [fast-prime?]]))
 
 (defn report-prime [elapsed-time]
   (print "***")

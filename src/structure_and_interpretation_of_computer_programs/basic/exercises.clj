@@ -1,3 +1,4 @@
+(ns structure-and-interpretation-of-computer-programs.basic.exercises)
 ; define a procedure that takes three number as arguments and returns sum of the squares of two larger numbers
 
 (defn ex1 [x y z]

@@ -1,3 +1,5 @@
+(ns structure-and-interpretation-of-computer-programs.exercises.chapter-2.vectors-reverse)
+
 (defn reverse-vector [items]
   (letfn [(reverse-vector-iter [vec new-vec n]
             (if (neg? n)

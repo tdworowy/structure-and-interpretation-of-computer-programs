@@ -1,3 +1,5 @@
+(ns structure-and-interpretation-of-computer-programs.exercises.chapter-2.horner-eval)
+
 (defn horner-eval [x coefficient-sequence]
   (reduce (fn [this-coeff higher-terms] (+ higher-terms (* this-coeff x))) 0 (reverse coefficient-sequence)))
 

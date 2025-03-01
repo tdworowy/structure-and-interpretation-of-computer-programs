@@ -1,3 +1,5 @@
+(ns structure-and-interpretation-of-computer-programs.exercises.chapter-1.composition)
+
 (defn compose [f g]
   (fn [x] (f (g x))))
 

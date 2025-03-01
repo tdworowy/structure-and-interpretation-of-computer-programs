@@ -1,3 +1,5 @@
+(ns structure-and-interpretation-of-computer-programs.abstraction-with-data.scale-tree)
+
 (defn scale-tree-map1 [tree factor]
   (cond
     (number? tree) (* tree factor)

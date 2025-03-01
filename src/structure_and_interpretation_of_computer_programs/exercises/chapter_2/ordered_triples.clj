@@ -1,3 +1,5 @@
+(ns structure-and-interpretation-of-computer-programs.exercises.chapter-2.ordered-triples)
+
 (defn unique-triples [n]
   (mapcat
    (fn [i]

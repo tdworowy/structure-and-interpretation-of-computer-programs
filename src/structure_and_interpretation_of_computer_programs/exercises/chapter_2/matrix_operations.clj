@@ -1,3 +1,5 @@
+(ns structure-and-interpretation-of-computer-programs.exercises.chapter-2.matrix-operations)
+
 (defn accumulate [op init sequence]
   (if (empty? sequence) init
       (recur op (op init (first sequence)) (rest sequence))))

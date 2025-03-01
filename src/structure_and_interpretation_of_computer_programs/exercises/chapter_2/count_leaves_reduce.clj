@@ -1,3 +1,5 @@
+(ns structure-and-interpretation-of-computer-programs.exercises.chapter-2.count-leaves-reduce)
+
 (defn count-leaves [x]
   (cond
     (not (coll? x)) 1

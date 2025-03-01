@@ -1,10 +1,9 @@
+(ns structure-and-interpretation-of-computer-programs.exercises.chapter-2.eight_queens_puzzle)
 
 (defn empty-board nil)
 (defn safe?) ;TODO
 (defn adjoin-position [new-row k rest-of-queens]
-  (cons rest-of-queens (list (list new-row k)))
-  ) ;TODO
-
+  (cons rest-of-queens (list (list new-row k)))) ;TODO
 
 (defn queens [board-size]
   (letfn [(queen-cols [k]

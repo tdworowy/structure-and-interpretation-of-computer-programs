@@ -1,3 +1,5 @@
+(ns structure-and-interpretation-of-computer-programs.abstraction-with-data.memq)
+
 (defn memq [item x]
   (cond
     (empty? x) false

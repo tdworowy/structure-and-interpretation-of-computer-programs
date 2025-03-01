@@ -1,3 +1,4 @@
+(ns structure-and-interpretation-of-computer-programs.exercises.chapter-1.smooth)
 
 (def dx 0.000001)
 

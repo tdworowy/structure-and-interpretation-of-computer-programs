@@ -1,3 +1,5 @@
+(ns structure-and-interpretation-of-computer-programs.basic.conditions)
+
 (defn _abs [x]
   (cond
     (> x 0) x

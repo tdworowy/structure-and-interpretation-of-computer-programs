@@ -1,3 +1,5 @@
+(ns structure-and-interpretation-of-computer-programs.exercises.chapter-2.counting-change1)
+
 (defn first-denomination [kinds-of-coins]
   (first kinds-of-coins))
 

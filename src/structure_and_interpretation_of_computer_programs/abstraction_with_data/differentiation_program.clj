@@ -1,4 +1,5 @@
-(require '[clojure.math :as math])
+(ns structure-and-interpretation-of-computer-programs.abstraction-with-data.differentiation-program
+  (:require [clojure.math :as math]))
 
 (defn variable? [x] (symbol? x))
 (defn same-variable? [v1 v2] (and (variable? v1) (variable? v2) (= v1 v2)))

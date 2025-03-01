@@ -1,4 +1,5 @@
-(require '[clojure.math :as math])
+(ns structure-and-interpretation-of-computer-programs.abstraction-with-procedures.fixed-point
+  (:require [clojure.math :as math]))
 
 (def tolerance 0.000001)
 

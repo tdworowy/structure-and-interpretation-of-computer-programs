@@ -1,3 +1,5 @@
+(ns structure-and-interpretation-of-computer-programs.exercises.chapter-2.fringe)
+
 (defn fringe [items]
   (cond
     (empty? items) []

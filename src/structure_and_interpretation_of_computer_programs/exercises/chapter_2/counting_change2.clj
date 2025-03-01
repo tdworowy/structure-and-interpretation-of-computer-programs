@@ -1,3 +1,5 @@
+(ns structure-and-interpretation-of-computer-programs.exercises.chapter-2.counting-change2)
+
 (defn cc [amount coin-values]
   (cond
     (= amount 0) 1

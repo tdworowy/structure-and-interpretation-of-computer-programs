@@ -1,3 +1,5 @@
+(ns structure-and-interpretation-of-computer-programs.abstraction-with-procedures.prime)
+
 (defn square [x]
   (* x x))
 

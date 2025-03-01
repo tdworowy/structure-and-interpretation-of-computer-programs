@@ -1,3 +1,5 @@
+(ns structure-and-interpretation-of-computer-programs.basic.procedures)
+
 (defn square [x] (* x x))
 
 (println (square 10))

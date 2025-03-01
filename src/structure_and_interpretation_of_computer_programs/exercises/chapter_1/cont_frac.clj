@@ -1,4 +1,5 @@
-(require '[clojure.math :as math])
+(ns structure-and-interpretation-of-computer-programs.exercises.chapter-1.cont-frac
+  (:require [clojure.math :as math]))
 
 (defn cont-frac-recur [n d k]
   (letfn [(recur-fn [i]

@@ -1,3 +1,5 @@
+(ns structure-and-interpretation-of-computer-programs.exercises.chapter-1.filtered_accumulate)
+
 (defn filtered-accumulate [predicate? combiner null-value term a next b]
   (if (> a b) null-value
       (combiner

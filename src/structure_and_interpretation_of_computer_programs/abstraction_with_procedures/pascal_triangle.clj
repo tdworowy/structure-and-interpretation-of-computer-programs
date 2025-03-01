@@ -1,3 +1,5 @@
+(ns structure-and-interpretation-of-computer-programs.abstraction-with-procedures.pascal-triangle)
+
 (defn pascal [row, col]
   (cond
     (= row 1) 1

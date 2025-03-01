@@ -1,3 +1,4 @@
+(ns structure-and-interpretation-of-computer-programs.exercises.chapter-1.iterative-improvement)
 
 (defn iterative-improvement [good-enough? improve]
   (letfn [(iter [guess]

@@ -1,3 +1,5 @@
+(ns structure-and-interpretation-of-computer-programs.exercises.chapter-2.same-parity)
+
 (defn same-parity [x & z]
   (let [parity (if (even? x) even? odd?)]
     (filter parity z)))

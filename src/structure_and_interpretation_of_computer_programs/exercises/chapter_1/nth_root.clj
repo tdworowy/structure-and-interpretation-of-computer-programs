@@ -1,4 +1,5 @@
-(load-file "../math/fixed_point.clj")
+(ns structure-and-interpretation-of-computer-programs.exercises.chapter-1.nth_root
+  (:require [structure-and-interpretation-of-computer-programs.abstraction-with-procedures.fixed-point :refer [average-damp fixed-point]]))
 
 (defn compose [f g]
   (fn [x] (f (g x))))

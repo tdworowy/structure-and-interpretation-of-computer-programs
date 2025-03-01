@@ -1,3 +1,5 @@
+(ns structure-and-interpretation-of-computer-programs.abstraction-with-data.simple-map)
+
 (defn _map [proc items]
   (if (empty? items) nil
       (cons (proc (first items)) (_map proc (rest items)))))

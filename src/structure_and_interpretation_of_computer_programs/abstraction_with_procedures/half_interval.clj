@@ -1,4 +1,5 @@
-(require '[clojure.math :as math])
+(ns structure-and-interpretation-of-computer-programs.abstraction-with-procedures.half-interval
+  (:require [clojure.math :as math]))
 
 (defn average [numbers] (/ (apply + numbers) (count numbers)))
 (defn close-enough? [x y]

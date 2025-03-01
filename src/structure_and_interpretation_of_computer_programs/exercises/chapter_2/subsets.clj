@@ -1,3 +1,5 @@
+(ns structure-and-interpretation-of-computer-programs.exercises.chapter-2.subsets)
+
 (defn subsets [s]
   (if (empty? s)
     '(())

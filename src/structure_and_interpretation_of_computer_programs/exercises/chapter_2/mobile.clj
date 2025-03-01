@@ -1,3 +1,5 @@
+(ns structure-and-interpretation-of-computer-programs.exercises.chapter-2.mobile)
+
 (defn make-mobile [left right]
   (list left right))
 

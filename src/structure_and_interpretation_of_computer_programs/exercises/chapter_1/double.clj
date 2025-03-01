@@ -1,3 +1,5 @@
+(ns structure-and-interpretation-of-computer-programs.exercises.chapter-1.double)
+
 (defn double-fn [f]
   (fn [x]
     (f (f x))))

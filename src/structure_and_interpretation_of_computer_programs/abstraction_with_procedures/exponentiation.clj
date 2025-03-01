@@ -1,3 +1,5 @@
+(ns structure-and-interpretation-of-computer-programs.abstraction-with-procedures.exponentiation)
+
 (defn fast-expt [b, n]
   (cond
     (= n 0) 1

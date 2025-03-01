@@ -1,3 +1,5 @@
+(ns structure-and-interpretation-of-computer-programs.exercises.chapter-2.fold)
+
 ;(defn fold-left [op init sequence]
 ;  (letfn [(iter [result _rest]
 ;            (if (empty? _rest) result

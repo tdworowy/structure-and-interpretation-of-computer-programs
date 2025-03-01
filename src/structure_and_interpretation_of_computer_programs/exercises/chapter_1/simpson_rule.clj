@@ -1,13 +1,15 @@
+(ns structure-and-interpretation-of-computer-programs.exercises.chapter-1.simpson-rule)
+
 (defn sum [term a next b]
   (if (> a b) 0
       (+ (term a) (sum term (next a) next b)))) ;linear recursion
 
 (defn sum-tail [term a next b]
-  (defn iter [a result]
-    (if (> a b)
-      result
-      (iter (next a) (+ result (term a)))))
-  (iter a 0))      ;tail recursion
+  (letfn [(iter [a result]
+            (if (> a b)
+              result
+              (iter (next a) (+ result (term a)))))]
+    (iter a 0)))      ;tail recursion
 
 (defn integral [f a b dx]
   (* (sum f (+ a (/ dx 2.0)) (fn [x] (+ x dx)) b) dx))
@@ -16,13 +18,13 @@
 ;h=(b−a)/n
 ;yk=f(a+kh)
 (defn integral-simpson [f a b n]
-  (def h (/ (- b a) n))
-  (defn add-2h [x] (+ x h h))
-  (* (+ (f a)
-        (* 2 (sum-tail f (add-2h a) add-2h (- b h)))
-        (* 4 (sum-tail f (+ a h) add-2h b))
-        (f b))
-     (/ h 3)))
+  (let [h (/ (- b a) n)]
+    (letfn [(add-2h [x] (+ x h h))]
+      (* (+ (f a)
+            (* 2 (sum-tail f (add-2h a) add-2h (- b h)))
+            (* 4 (sum-tail f (+ a h) add-2h b))
+            (f b))
+         (/ h 3)))))
 
 (defn cube [x] (* x x x))
 
