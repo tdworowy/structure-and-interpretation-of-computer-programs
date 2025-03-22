@@ -48,8 +48,28 @@
           ()
           ())))))))))
 
+(defn partial-tree [elements n]
+  (if (= n 0)
+    (cons '() elements)
+    (let [left-size (int (/ (- n 1) 2))
+          left-result (partial-tree elements left-size)
+          left-tree (first left-result)
+          non-left-elements (rest left-result)
+          right-size (- n (+ left-size 1))
+          this-entry (first non-left-elements)
+          right-results (partial-tree (rest non-left-elements) right-size)
+          right-tree (first right-results)
+          remaining-elements (rest right-results)]
+      (cons (make-tree this-entry left-tree right-tree) remaining-elements))))
+
+(defn list->tree [elements]
+  (first (partial-tree elements (count elements))))
+
 (println (element-of-set? 2 sample-tree))
 (println (element-of-set? 8 sample-tree))
 (println (tree->list-1 sample-tree))
 (println (tree->list-1 (adjoin-set 12 sample-tree)))
 (println (tree->list-1 (adjoin-set 8 sample-tree)))
+
+(println (list->tree [11 5 2 9 7 1]))
+(println (list->tree [1 2 5 7 9 11]))
