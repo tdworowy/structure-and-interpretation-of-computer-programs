@@ -39,6 +39,17 @@
                     (cons (symbol-leaf next-branch) (decode-1 (rest bits) tree))
                     (decode-1 (rest bits) next-branch)))))] (decode-1 bits tree)))
 
+(defn adjoin-set [x set]
+  (cond (empty? set) (list x)
+        (< (weight x) (weight (first set)) (cons x set))
+        :else (cons (first set) (adjoin-set x (rest set)))))
+
+(defn make-leaf-set [pairs]
+  (if (empty? pairs) '()
+      (let [pair (first pairs)]
+        (adjoin-set (make-leaf (first pair) (second pair))
+                    (make-leaf-set (rest pairs))))))
+
 (def leaf-a (make-leaf 'A 4))
 (def leaf-b (make-leaf 'B 2))
 (def leaf-c (make-leaf 'C 1))
