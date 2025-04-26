@@ -1,3 +1,5 @@
+(ns structure-and-interpretation-of-computer-programs.abstraction-with-data.complex-numbers
+  (:require [clojure.math :as math]))
 
 (defn square [x] (* x x))
 
@@ -23,23 +25,23 @@
 
 ; first representation
 (defn make-from-real-img-rectangular [x y] (cons x y))
-(defn make-from-mag-ang-rectangular [r a] (cons (* r (clojure.math/cos a)) (* r (clojure.math/sin a))))
+(defn make-from-mag-ang-rectangular [r a] (cons (* r (math/cos a)) (* r (math/sin a))))
 
 (defn real-part-rectangular [z] (first z))
 (defn img-part-rectangular [z] (second z))
 
-(defn magnitude-rectangular [z] (clojure.math/sqrt (+ (square (real-part-rectangular z)) (square (img-part-rectangular z)))))
-(defn angle-rectangular [z] (clojure.math/atan2 (img-part-rectangular z) (real-part-rectangular z)))
+(defn magnitude-rectangular [z] (math/sqrt (+ (square (real-part-rectangular z)) (square (img-part-rectangular z)))))
+(defn angle-rectangular [z] (math/atan2 (img-part-rectangular z) (real-part-rectangular z)))
 
 ; second representation
-(defn make-from-real-img-polar [x y] (cons (clojure.math/sqrt (+ (square x) (square y))) (clojure.math/atan2 y x)))
+(defn make-from-real-img-polar [x y] (cons (math/sqrt (+ (square x) (square y))) (math/atan2 y x)))
 (defn make-from-mag-ang-polar [r a] (cons r a))
 
 (defn magnitude-polar [z] (first z))
 (defn angle-polar [z] (second z))
 
-(defn real-part-polar [z] (* (magnitude-polar z) (clojure.math/cos (angle-polar z))))
-(defn img-part-polar [z] (* (magnitude-polar z) (clojure.math/sin (angle-polar z))))
+(defn real-part-polar [z] (* (magnitude-polar z) (math/cos (angle-polar z))))
+(defn img-part-polar [z] (* (magnitude-polar z) (math/sin (angle-polar z))))
 
 ; generic
 (defn real-part [z]
@@ -81,3 +83,33 @@
 (defn div-complex [z1 z2]
   (make-from-mag-ang (/ (magnitude z1) (magnitude z2)) (- (angle z1) (angle z2))))
 
+; message passing
+(defn make-from-real-img [x y]
+  (fn [op]
+    (cond
+      (= op 'real-part) x
+      (= op 'image-part) y
+      (= op 'magnitude) (math/sqrt (+ (square x) (square y)))
+      (= op 'angle) (math/atan2 x y)
+      :else (println "Unknown op" op))))
+
+(defn make-from-mag-ang [r a]
+  (fn [op]
+    (cond
+      (= op 'real-part) (* r (math/cos a))
+      (= op 'image-part) (* r (math/sin a))
+      (= op 'magnitude) r
+      (= op 'angle) a
+      :else (println "Unknown op" op))))
+
+(defn apply-generic [op arg] (arg op))
+
+(println (apply-generic 'real-part (make-from-real-img 2 2)))
+(println (apply-generic 'image-part (make-from-real-img 2 2)))
+(println (apply-generic 'magnitude (make-from-real-img 2 2)))
+(println (apply-generic 'angle (make-from-real-img 2 2)))
+
+(println (apply-generic 'real-part (make-from-mag-ang 2 2)))
+(println (apply-generic 'image-part (make-from-mag-ang 2 2)))
+(println (apply-generic 'magnitude (make-from-mag-ang 2 2)))
+(println (apply-generic 'angle (make-from-mag-ang 2 2)))
